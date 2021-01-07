@@ -33,10 +33,12 @@ def __get_req_from_name(req_from):
 
 # Extracts user's input (text or button click) from Telegram request
 def get_user_input_from_request(req_body):
-    if 'message' in req_body:
-        return req_body.get('message', {}).get('text', '')
+    if 'message' in req_body and 'entities' in req_body['message']:
+        text = req_body.get('message').get('text')
+        return set(map(lambda entity: text[entity['offset'] + 1: entity['offset'] + entity['length']],
+                       filter(lambda entity: entity['type'] == 'bot_command', req_body['message']['entities'])))
     else:
-        return ''
+        return {}
 
 
 # Extracts user's commands from Telegram request
