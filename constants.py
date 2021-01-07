@@ -26,4 +26,4 @@ ONGOING_ORDER_SUGGESTIONS = (
 # Change the following to suit your project
 DIALOGFLOW_PROJECT_ID = "ninja-van-dialogflow-devmy"
 GOOGLE_SERVICE_ACCOUNT_FILE_PATH = "ninja-van-dialogflow-devmy.json"
-TELEGRAM_API_TOKEN = ""
+TELEGRAM_API_TOKEN = "1579462746:AAGiRTtBisAc6M0XMwpPbDx0u2s-oJR10yc"
